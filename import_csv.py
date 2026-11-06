@@ -6,7 +6,7 @@ import sqlite3 as sql
 conn = sql.connect('database/trainrides.db')
 
 # importation des données depuis le fichier CSV
-df = pd.read_csv('data/TrainRides_clean.csv')
+df = pd.read_csv('data/TrainRides_clean.csv', sep=',')
 
 # création des tables dans la base de données
 df.to_sql('TrainRides_clean', conn, if_exists='replace', index=False)
